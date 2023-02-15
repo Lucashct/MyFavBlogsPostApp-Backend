@@ -1,5 +1,4 @@
 import puppeteer from 'puppeteer'
-import chromium from 'chrome-aws-lambda';
 
 const favBlogs = {
   rocketSeat: { name: 'Rocketseat', link: 'https://blog.rocketseat.com.br/' },
@@ -7,11 +6,7 @@ const favBlogs = {
 }
 
 export const getPostsFromRocketSeat = async () => {
-  const browser = await puppeteer.launch({
-    args: chromium.args,
-    executablePath: await chromium.executablePath,
-    headless: true
-  });
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(favBlogs.rocketSeat.link, {waitUntil: 'load', timeout: 0});
 
@@ -66,11 +61,7 @@ export const getPostsFromRocketSeat = async () => {
 }
 
 export const getPostsFromVidaDeGamer = async () => {
-  const browser = await puppeteer.launch({
-    args: chromium.args,
-    executablePath: await chromium.executablePath,
-    headless: true
-  });
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(favBlogs.vidaDeGamer.link, { waitUntil: 'load', timeout: 0 });
 
