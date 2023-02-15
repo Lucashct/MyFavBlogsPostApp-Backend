@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -33,9 +34,7 @@ app.post('/links/delete', async (req, res) => {
   res.status(201).json(remove)
 })
 
-const port = 4000
-
 //EXEC APP
-app.listen(port, () => {
-  console.log(`Aplicação rodando na porta ${port}`)
+app.listen(process.env.PORT, () => {
+  console.log(`Aplicação rodando na porta ${process.env.PORT}`)
 })
