@@ -11,7 +11,7 @@ app.use(cors());
 app.use(morgan('dev'))
 
 //ROUTES
-app.get('/', async (req, res) => {
+app.post('/loadapp', async (req, res) => {
   await linksStorage();
   res.status(201).json({activity: 'done'})
 });
