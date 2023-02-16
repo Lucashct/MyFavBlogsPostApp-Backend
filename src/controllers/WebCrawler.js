@@ -7,7 +7,7 @@ const favBlogs = {
 }
 
 export const getPostsFromRocketSeat = async () => {
-  const browser = await puppeteer.launch({ cacheDirectory: process.env.PUPPETEER_CACHE_DIR });
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(favBlogs.rocketSeat.link, {waitUntil: 'load', timeout: 0});
 
@@ -62,7 +62,7 @@ export const getPostsFromRocketSeat = async () => {
 }
 
 export const getPostsFromVidaDeGamer = async () => {
-  const browser = await puppeteer.launch({cacheDirectory: process.env.PUPPETEER_CACHE_DIR});
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(favBlogs.vidaDeGamer.link, { waitUntil: 'load', timeout: 0 });
 
